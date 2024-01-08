@@ -43,6 +43,6 @@ This week’s challenge requires to create an application that an employee can u
   Select at least one character type prompt : ![Alt text](images/PasswordGenerator9.png)
 
 
-## Git Hub page - 
+## Git Hub page - https://github.com/venkatdangeti/Password-Generator.git
 
-## deployed site page - 
+## deployed site page - https://venkatdangeti.github.io/Password-Generator/
