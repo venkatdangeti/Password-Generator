@@ -88,21 +88,15 @@ var upperCasedCharacters = [
   'Z'
 ];
 
+
 var input = [""];
 
 var randomPassword = "";
 
+
 // Function to prompt user for password options
 function getPasswordOptions() {
 
-  // //Function to request total length
-  // var passLength = prompt("Enter desired amount of characters:")
-
-  // //validate for valid password length
-  // if (passLength < 8 || passLength > 128 || isNaN(passLength)) {
-  //   alert("Invalid entry - Please enter a number between 8 and 128");
-  //   return
-  // }
 
   //Prompts user choice for lowercases
   var lowercaseConfirm = confirm("Include lowercase letters?");
@@ -110,7 +104,7 @@ function getPasswordOptions() {
     for (var i = 0; i < lowerCasedCharacters.length; i++) {
       input.push(lowerCasedCharacters[i]);
     }
-    console.log(input)
+
   }
 
   //Prompts user choice for uppercases
@@ -119,7 +113,7 @@ function getPasswordOptions() {
     for (var i = 0; i < upperCasedCharacters.length; i++) {
       input.push(upperCasedCharacters[i]);
     }
-    console.log(input)
+
   }
 
   //Prompts user choice for numbers
@@ -128,7 +122,7 @@ function getPasswordOptions() {
     for (var i = 0; i < numericCharacters.length; i++) {
       input.push(numericCharacters[i]);
     }
-    console.log(input)
+
   }
 
   //Prompts user choice for specialscharacters
@@ -137,7 +131,7 @@ function getPasswordOptions() {
     for (var i = 0; i < specialCharacters.length; i++) {
       input.push(specialCharacters[i]);
     }
-    console.log(input)
+
   }
 
   // condition for select at least one character type for their password.
@@ -152,21 +146,22 @@ function getPasswordOptions() {
 // Function for getting a random element from an array
 function getRandom(arr) {
 
-  //Function to request total length
-  var passLength = prompt("Enter desired amount of characters:")
+  var passwordLength = prompt("Enter required amount of characters:")
 
   //validate for valid password length
-  if (passLength < 8 || passLength > 128 || isNaN(passLength)) {
+  if (passwordLength < 8 || passwordLength > 128 || isNaN(passwordLength)) {
     alert("Invalid entry - Please enter a number between 8 and 128");
     return
   }
 
+  //calling getPasswordOptions function
   input[arr] = getPasswordOptions();
+
 
   var randomPassword = ""
 
   //Changes passLength string to intergers
-  const confirmLength = parseInt(passLength)
+  const confirmLength = parseInt(passwordLength)
 
   for (var i = 0; i < confirmLength; i++) {
     input[
@@ -182,6 +177,7 @@ function getRandom(arr) {
 // Function to generate password with user input
 function generatePassword() {
 
+  //calling getRandom function
   randomPassword = getRandom();
 
   return randomPassword;
